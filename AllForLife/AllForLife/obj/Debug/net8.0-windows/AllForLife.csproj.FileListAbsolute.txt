@@ -47,3 +47,4 @@ C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\
 C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\демоэкз\для практики\AllForLife\AllForLife\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\демоэкз\для практики\AllForLife\AllForLife\obj\Debug\net8.0-windows\AllForLife.csproj.AssemblyReference.cache
 C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\демоэкз\для практики\AllForLife\AllForLife\obj\Debug\net8.0-windows\AllForLife.csproj.Up2Date
+C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\демоэкз\для практики\AllForLife\AllForLife\obj\Debug\net8.0-windows\AllForLife.sourcelink.json

@@ -20,7 +20,7 @@ namespace AllForLife.Entity
 
             string query = "select idProduct, productName, article, price, " +
                 "maxSale, currentSale, count, prodDesc, imageURL, nameCategory, " +
-                "nameBrand, nameSupplier" +
+                "nameBrand, nameSupplier " +
                 "from product " +
                 "join category on categoryId = idCategory " +
                 "join supplier on supplierId = idSupplier " +
@@ -42,7 +42,17 @@ namespace AllForLife.Entity
                     products.Article = reader["article"].ToString();
                     products.Price = Convert.ToDecimal(reader["price"]);
                     products.MaxSale = Convert.ToInt32(reader["maxSale"]);
+                    products.CurrentSale = Convert.ToInt32(reader["currentSale"]);
+                    products.Description = reader["prodDesc"].ToString();
+                    products.ImageURL = reader["imageURL"].ToString();
+                    products.Category = reader["nameCategory"].ToString();
+                    products.Supplier = reader["nameSupplier"].ToString();
+                    products.Brand = reader["nameBrand"].ToString();
+
+                    productsList.Add(products);
                 }
+
+                reader.Close();
 
             }
             catch(Exception ex)

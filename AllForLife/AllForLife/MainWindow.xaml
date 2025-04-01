@@ -31,17 +31,20 @@
                  Grid.Row="1"
                  BorderBrush="Black"
                  BorderThickness="1"
-                 Margin="5">
+                 Margin="5"
+                 HorizontalAlignment="Stretch"
+                 ScrollViewer.HorizontalScrollBarVisibility ="Hidden"
+                 ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    
+
                     <Border 
                         Style="{StaticResource LBborderStyle}">
                         <Grid Margin="5">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition Width="680"/>
+                                <ColumnDefinition Width="100"/>
                             </Grid.ColumnDefinitions>
 
                             <Border
@@ -52,13 +55,47 @@
                                        MaxHeight="150"
                                        Margin="3"/>
                             </Border>
-                            
-                            
-                            
+
+                            <Border Grid.Column="1"
+                                Style="{StaticResource LBborderStyle}">
+
+                                <StackPanel Margin="10">
+                                    <TextBlock x:Name="prodNameTB"
+                                               Text="{Binding Name}"
+                                               Style="{StaticResource ProdLstStyle}"
+                                               FontWeight="Bold"/>
+
+                                    <TextBlock x:Name="categoryTB"
+                                               Text="{Binding Category, StringFormat='Категория товара: {0}'}"
+                                               Style="{StaticResource ProdLstStyle}"/>
+
+
+
+                                    <TextBlock x:Name="DescTB"
+                                               Text="{Binding Description, StringFormat='Описание товара: {0}'}"
+                                               Style="{StaticResource ProdLstStyle}"/>
+
+                                    <TextBlock x:Name="PriceTB"
+                                               Text="{Binding Price, StringFormat='Стоимость: {0} руб.'}"
+                                               Style="{StaticResource ProdLstStyle}"/>
+
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Column="2"
+                                    Style="{StaticResource LBborderStyle}">
+
+                                <TextBlock x:Name="saleTB"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Margin="10"
+                                           FontSize="20"
+                                          Text="{Binding CurrentSale, StringFormat=' {0} %'}"/>
+
+                            </Border>
                         </Grid>
-                        
+
                     </Border>
-                   
                 </DataTemplate>
             </ListBox.ItemTemplate>
             
