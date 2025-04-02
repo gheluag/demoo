@@ -10,9 +10,16 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Icon="/Resources/picture.png">
+
+    <Window.Resources>
+        <local:SaleConverter x:Key="SaleConv"/>
+    </Window.Resources>
+    
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
@@ -27,8 +34,30 @@
             </StackPanel>
         </Grid>
 
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <TextBlock Text="Диапазон скидки"
+                           FontSize="20"
+                           Margin="10"/>
+
+                <ComboBox x:Name="SaleCB"
+                          Margin="10"
+                          Width="150"
+                          SelectionChanged="SaleCB_SelectionChanged"/>
+
+            </StackPanel>
+
+        </Grid>
+
         <ListBox x:Name="productsLB"
-                 Grid.Row="1"
+                 Grid.Row="2"
                  BorderBrush="Black"
                  BorderThickness="1"
                  Margin="5"
@@ -50,7 +79,7 @@
                             <Border
                                 Style="{StaticResource LBborderStyle}">
 
-                                <Image Source="/Resources/picture.png"
+                                <Image Source="{Binding ImageURL}"
                                        MaxWidth="150"
                                        MaxHeight="150"
                                        Margin="3"/>
@@ -90,7 +119,8 @@
                                            VerticalAlignment="Center"
                                            Margin="10"
                                            FontSize="20"
-                                          Text="{Binding CurrentSale, StringFormat=' {0} %'}"/>
+                                          Text="{Binding CurrentSale, StringFormat=' {0} %'}"
+                                           Foreground="{Binding CurrentSale, Converter={StaticResource SaleConv}}"/>
 
                             </Border>
                         </Grid>

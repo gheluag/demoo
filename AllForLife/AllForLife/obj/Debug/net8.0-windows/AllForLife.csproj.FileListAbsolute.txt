@@ -48,3 +48,4 @@ C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\
 C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\демоэкз\для практики\AllForLife\AllForLife\obj\Debug\net8.0-windows\AllForLife.csproj.AssemblyReference.cache
 C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\демоэкз\для практики\AllForLife\AllForLife\obj\Debug\net8.0-windows\AllForLife.csproj.Up2Date
 C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\демоэкз\для практики\AllForLife\AllForLife\obj\Debug\net8.0-windows\AllForLife.sourcelink.json
+C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\демоэкз\для практики\AllForLife\AllForLife\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
