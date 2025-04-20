@@ -20,6 +20,9 @@ public partial class MainWindow : Window
 {
     private DataBase _db;
     private ObservableCollection<Products> _productsCollection { get; set; }
+
+    static string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
+    string defaultImage = System.IO.Path.Combine(imageFolder, "picture.png");
     public MainWindow()
     {
         InitializeComponent();
@@ -27,6 +30,7 @@ public partial class MainWindow : Window
         _productsCollection = new ObservableCollection<Products>();
         LoadProducts();
         LoadSaleComboBox();
+        
     }
 
 
@@ -76,22 +80,6 @@ public partial class MainWindow : Window
         _productsCollection.Clear();
         foreach (var prod in filteredProducts)
         {
-            _productsCollection.Add(prod);
-        }
-
-        productsLB.ItemsSource = _productsCollection;
-    }
-
-
-    private void LoadProducts()
-    {
-        var prodlst = _db.GetProducts();
-
-        string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
-        string defaultImage = System.IO.Path.Combine(imageFolder, "picture.png");
-
-        foreach (var prod in prodlst)
-        {
             if (string.IsNullOrWhiteSpace(prod.ImageURL))
             {
                 prod.ImageURL = defaultImage;
@@ -111,11 +99,87 @@ public partial class MainWindow : Window
             }
 
             _productsCollection.Add(prod);
-
         }
 
         productsLB.ItemsSource = _productsCollection;
+        countItems.Text = $"Показано товаров: {productsLB.Items.Count}";
     }
 
 
+    private void LoadProducts()
+    {
+        string txt = searchTB.Text.Trim();
+
+        if (string.IsNullOrEmpty(txt))
+        {
+            _productsCollection.Clear();
+            var prodlst = _db.GetProducts();
+
+           
+
+            foreach (var prod in prodlst)
+            {
+                if (string.IsNullOrWhiteSpace(prod.ImageURL))
+                {
+                    prod.ImageURL = defaultImage;
+                }
+                else
+                {
+                    string imagePath = System.IO.Path.Combine(imageFolder, prod.ImageURL);
+
+                    if (!System.IO.File.Exists(imagePath))
+                    {
+                        prod.ImageURL = defaultImage;
+                    }
+                    else
+                    {
+                        prod.ImageURL = imagePath;
+                    }
+                }
+
+                _productsCollection.Add(prod);
+            }
+
+        }
+        else
+        {
+            _productsCollection.Clear();
+            var products = _db.SearchResults(txt);
+
+
+            foreach (var prod in products)
+            {
+                if (string.IsNullOrWhiteSpace(prod.ImageURL))
+                {
+                    prod.ImageURL = defaultImage;
+                }
+                else
+                {
+                    string imagePath = System.IO.Path.Combine(imageFolder, prod.ImageURL);
+
+                    if (!System.IO.File.Exists(imagePath))
+                    {
+                        prod.ImageURL = defaultImage;
+                    }
+                    else
+                    {
+                        prod.ImageURL = imagePath;
+                    }
+                }
+
+                _productsCollection.Add(prod);
+            }
+        }
+
+
+
+
+            productsLB.ItemsSource = _productsCollection;
+        countItems.Text = $"Показано товаров: {productsLB.Items.Count}";
+    }
+
+    private void searchTB_SelectionChanged(object sender, RoutedEventArgs e)
+    {
+        LoadProducts();
+    }
 }

@@ -7,7 +7,9 @@ idRole int primary key auto_increment,
 roleName varchar(255) not null
 );
 
-
+insert into roles
+values (1, 'Клиент'),
+(2, 'Администратор');
 
 create table users(
 idUser int primary key auto_increment,
@@ -19,6 +21,12 @@ passw varchar(255) not null,
 roleId int not null,
 foreign key (roleId) references roles (idRole)
 );
+
+select * from users
+
+insert into users
+values 
+(17, 'лягуш', 'лягушкинск', 'лягушка', 'legush', 'legush', 2);
 
 create table supplier(
 idSupplier int primary key auto_increment,
