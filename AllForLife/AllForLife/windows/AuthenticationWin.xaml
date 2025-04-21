@@ -1,0 +1,52 @@
+﻿<Window
+    x:Class="AllForLife.windows.AuthenticationWin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AllForLife.windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Авторизация"
+    Width="500"
+    Height="450"
+    FontFamily="Comic Sans MS"
+    mc:Ignorable="d"
+    WindowStartupLocation="CenterScreen">
+
+    <StackPanel
+        Margin="10"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+
+        <TextBlock
+            Margin="10"
+            HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="Имя пользователя" />
+        
+        <TextBox
+            x:Name="usernameTB"
+            Width="200"
+            Margin="10"
+            HorizontalAlignment="Center" />
+
+        <TextBlock
+            Margin="10"
+            HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="Пароль" />
+
+        <PasswordBox
+            x:Name="passwordTB"
+            Width="200"
+            Margin="10" />
+
+        <Button
+            x:Name="authBTN"
+            Width="100"
+            Height="30"
+            Margin="10"
+            Content="Войти"
+            Style="{StaticResource btnStyle}" Click="authBTN_Click" />
+
+    </StackPanel>
+</Window>

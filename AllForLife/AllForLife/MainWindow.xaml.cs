@@ -23,6 +23,8 @@ public partial class MainWindow : Window
 
     static string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
     string defaultImage = System.IO.Path.Combine(imageFolder, "picture.png");
+
+    private Users _currentUser;
     public MainWindow()
     {
         InitializeComponent();
@@ -108,78 +110,59 @@ public partial class MainWindow : Window
 
     private void LoadProducts()
     {
+        List<Products> prodlst;
         string txt = searchTB.Text.Trim();
 
         if (string.IsNullOrEmpty(txt))
         {
             _productsCollection.Clear();
-            var prodlst = _db.GetProducts();
-
-           
-
-            foreach (var prod in prodlst)
-            {
-                if (string.IsNullOrWhiteSpace(prod.ImageURL))
-                {
-                    prod.ImageURL = defaultImage;
-                }
-                else
-                {
-                    string imagePath = System.IO.Path.Combine(imageFolder, prod.ImageURL);
-
-                    if (!System.IO.File.Exists(imagePath))
-                    {
-                        prod.ImageURL = defaultImage;
-                    }
-                    else
-                    {
-                        prod.ImageURL = imagePath;
-                    }
-                }
-
-                _productsCollection.Add(prod);
-            }
+            prodlst = _db.GetProducts();
 
         }
         else
         {
             _productsCollection.Clear();
-            var products = _db.SearchResults(txt);
+            prodlst = _db.SearchResults(txt);
+        }
 
-
-            foreach (var prod in products)
+        foreach (var prod in prodlst)
+        {
+            if (string.IsNullOrWhiteSpace(prod.ImageURL))
             {
-                if (string.IsNullOrWhiteSpace(prod.ImageURL))
+                prod.ImageURL = defaultImage;
+            }
+            else
+            {
+                string imagePath = System.IO.Path.Combine(imageFolder, prod.ImageURL);
+
+                if (!System.IO.File.Exists(imagePath))
                 {
                     prod.ImageURL = defaultImage;
                 }
                 else
                 {
-                    string imagePath = System.IO.Path.Combine(imageFolder, prod.ImageURL);
-
-                    if (!System.IO.File.Exists(imagePath))
-                    {
-                        prod.ImageURL = defaultImage;
-                    }
-                    else
-                    {
-                        prod.ImageURL = imagePath;
-                    }
+                    prod.ImageURL = imagePath;
                 }
-
-                _productsCollection.Add(prod);
             }
+
+            _productsCollection.Add(prod);
         }
 
 
 
 
-            productsLB.ItemsSource = _productsCollection;
+        productsLB.ItemsSource = _productsCollection;
         countItems.Text = $"Показано товаров: {productsLB.Items.Count}";
     }
 
     private void searchTB_SelectionChanged(object sender, RoutedEventArgs e)
     {
         LoadProducts();
+    }
+
+    private void authBTN_Click(object sender, RoutedEventArgs e)
+    {
+        windows.AuthenticationWin authenticationWin = new();
+        authenticationWin.ShowDialog();
     }
 }

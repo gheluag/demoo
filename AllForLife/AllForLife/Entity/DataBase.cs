@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Printing;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +11,7 @@ namespace AllForLife.Entity
 {
     public class DataBase
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;user=root;password=1234;port=3306;database=AllForLife");
+        MySqlConnection connection = new MySqlConnection("server=localhost;user=root;password=123456789;port=3306;database=AllForLife");
 
 
         public List<Products> GetProducts()
@@ -187,6 +188,91 @@ namespace AllForLife.Entity
 
         }
 
+        public (bool isAuth, string Role) AuthenticationUser(string username, string password)
+        {
+          
+
+            string query = "select u.*, r.roleName " +
+                "from users u " +
+                "join roles r on u.roleId = r.idRole " +
+                "where username = @un";
+
+            try
+            {
+                connection.Open();
+
+                MySqlCommand command = new(query, connection);
+                command.Parameters.AddWithValue("@un", username);
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string dbpassw = reader["passw"].ToString();
+                    string role = reader["roleName"].ToString();
+
+                    if(password == dbpassw)
+                    {
+                        return (true, role);
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return (false, null);
+        }
+
+
+        public Users GetUserByUN(string username)
+        {
+            string query = "SELECT u.*, r.roleName FROM users u " +
+                   "JOIN roles r ON u.roleId = r.idRole " +
+                   "WHERE username = @un";
+
+            try
+            {
+                connection.Open();
+
+                MySqlCommand command = new(query, connection);
+                command.Parameters.AddWithValue("@un", username);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new Users
+                        {
+                            Id = Convert.ToInt32(reader["id"]),
+                            Username = reader["username"].ToString(),
+                            FirstName = reader["firstName"].ToString(),
+                            LastName = reader["lastName"].ToString(),
+                            MiddleName = reader["middleName"]?.ToString(),
+                            Password = reader["passw"].ToString(),
+                            Role = reader["roleName"].ToString()
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return null;
+        }
 
 
     }
