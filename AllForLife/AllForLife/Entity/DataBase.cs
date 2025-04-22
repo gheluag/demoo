@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace AllForLife.Entity
 {
     public class DataBase
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;user=root;password=123456789;port=3306;database=AllForLife");
+        MySqlConnection connection = new MySqlConnection("server=localhost;user=root;password=1234;port=3306;database=AllForLife");
 
 
         public List<Products> GetProducts()
@@ -188,33 +189,39 @@ namespace AllForLife.Entity
 
         }
 
-        public (bool isAuth, string Role) AuthenticationUser(string username, string password)
-        {
-          
 
-            string query = "select u.*, r.roleName " +
+        public Users AuthenticateUser(string uName, string passw)
+        {
+            Users users = null;
+
+            string query = "select u.*, roleName " +
                 "from users u " +
-                "join roles r on u.roleId = r.idRole " +
-                "where username = @un";
+                "join roles on u.roleId = idRole " +
+                "where username = @uname and passw = @passw";
 
             try
             {
                 connection.Open();
 
-                MySqlCommand command = new(query, connection);
-                command.Parameters.AddWithValue("@un", username);
+                MySqlCommand cmd = new(query, connection);
 
-                MySqlDataReader reader = command.ExecuteReader();
+                cmd.Parameters.AddWithValue("@uname", uName);
+                cmd.Parameters.AddWithValue("@passw", passw);
 
-                if (reader.Read())
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    string dbpassw = reader["passw"].ToString();
-                    string role = reader["roleName"].ToString();
-
-                    if(password == dbpassw)
+                    users = new Users
                     {
-                        return (true, role);
-                    }
+                        Id = Convert.ToInt32(reader["idUser"]),
+                        FirstName = reader["firstname"].ToString(),
+                        LastName = reader["lastname"].ToString(),
+                        MiddleName = reader["patronymic"].ToString(),
+                        Username = reader["username"].ToString(),
+                        Password = reader["passw"].ToString(),
+                        Role = reader["roleName"].ToString()
+                    };
                 }
 
 
@@ -228,52 +235,11 @@ namespace AllForLife.Entity
                 connection.Close();
             }
 
-            return (false, null);
+            return users;
         }
 
 
-        public Users GetUserByUN(string username)
-        {
-            string query = "SELECT u.*, r.roleName FROM users u " +
-                   "JOIN roles r ON u.roleId = r.idRole " +
-                   "WHERE username = @un";
 
-            try
-            {
-                connection.Open();
-
-                MySqlCommand command = new(query, connection);
-                command.Parameters.AddWithValue("@un", username);
-
-                using (MySqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        return new Users
-                        {
-                            Id = Convert.ToInt32(reader["id"]),
-                            Username = reader["username"].ToString(),
-                            FirstName = reader["firstName"].ToString(),
-                            LastName = reader["lastName"].ToString(),
-                            MiddleName = reader["middleName"]?.ToString(),
-                            Password = reader["passw"].ToString(),
-                            Role = reader["roleName"].ToString()
-                        };
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return null;
-        }
-
-
+        
     }
 }

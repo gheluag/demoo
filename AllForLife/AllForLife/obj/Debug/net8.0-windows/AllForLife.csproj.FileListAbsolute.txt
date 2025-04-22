@@ -102,3 +102,5 @@ C:\Users\ChibisovaAE\Desktop\говна\demo\aeae\demoo\AllForLife\AllForLife\ob
 C:\Users\ChibisovaAE\Desktop\говна\demo\aeae\demoo\AllForLife\AllForLife\obj\Debug\net8.0-windows\ref\AllForLife.dll
 C:\Users\ChibisovaAE\Desktop\говна\demo\aeae\demoo\AllForLife\AllForLife\obj\Debug\net8.0-windows\windows\AuthenticationWin.g.cs
 C:\Users\ChibisovaAE\Desktop\говна\demo\aeae\demoo\AllForLife\AllForLife\obj\Debug\net8.0-windows\windows\AuthenticationWin.baml
+C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\демоэкз\для практики\AllForLife\AllForLife\obj\Debug\net8.0-windows\windows\AuthenticationWin.g.cs
+C:\Users\albin\Desktop\gheluag\проекты\рабочие программы\демоэкз\для практики\AllForLife\AllForLife\obj\Debug\net8.0-windows\windows\AuthenticationWin.baml

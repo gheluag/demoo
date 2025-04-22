@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,6 +22,7 @@ namespace AllForLife.windows
     public partial class AuthenticationWin : Window
     {
         DataBase _db;
+        public Users CurrentUser { get; set; }
         public AuthenticationWin()
         {
             InitializeComponent();
@@ -32,26 +34,16 @@ namespace AllForLife.windows
             string username = usernameTB.Text.Trim();
             string password = passwordTB.Password.Trim();
 
-            var (isauth, role) = _db.AuthenticationUser(username, password);
+            CurrentUser = _db.AuthenticateUser(username, password);
 
-
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if(CurrentUser != null)
             {
-                MessageBox.Show("Введите логин и пароль");
-                return;
+                DialogResult = true;
+                Close();
             }
-
-            if (!isauth)
-            {
-                MessageBox.Show("неверное имя пользователя или пароль", "ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
             else
             {
-                var user = _db.GetUserByUN(username);
-                var mainWin = new MainWindow();
-                mainWin.Show();
+                MessageBox.Show("Неверный логин или пароль", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             
         }

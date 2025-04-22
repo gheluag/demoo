@@ -20,11 +20,12 @@ public partial class MainWindow : Window
 {
     private DataBase _db;
     private ObservableCollection<Products> _productsCollection { get; set; }
+    private Users currentUser;
 
     static string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
     string defaultImage = System.IO.Path.Combine(imageFolder, "picture.png");
 
-    private Users _currentUser;
+   
     public MainWindow()
     {
         InitializeComponent();
@@ -163,6 +164,53 @@ public partial class MainWindow : Window
     private void authBTN_Click(object sender, RoutedEventArgs e)
     {
         windows.AuthenticationWin authenticationWin = new();
-        authenticationWin.ShowDialog();
+        if(authenticationWin.ShowDialog() == true)
+        {
+            currentUser = authenticationWin.CurrentUser;
+            UpdUI();
+        }
     }
+
+
+    private void UpdUI()
+    {
+        userPanel.Visibility = Visibility.Visible;
+        usernameTB.Text = currentUser.Username;
+        nameTB.Text = currentUser.FullName;
+
+        authBTN.Content = "выйти";
+        authBTN.Click -= authBTN_Click;
+        authBTN.Click += LogoutButton_Click;
+        regBTN.Visibility = Visibility.Collapsed;
+
+
+        ordersBtn.Visibility = Visibility.Visible;
+
+        if (currentUser.Role == "Admin")
+        {
+            AddAdminButtons();
+        }
+
+    }
+
+    private void AddAdminButtons()
+    {
+
+    }
+
+
+    private void LogoutButton_Click(object sender, RoutedEventArgs e)
+    {
+        currentUser = null;
+
+        userPanel.Visibility = Visibility.Collapsed;
+
+        authBTN.Content = "авторизация";
+        authBTN.Click -= LogoutButton_Click;
+        authBTN.Click += authBTN_Click;
+        regBTN.Visibility = Visibility.Visible;
+
+        
+    }
+
 }

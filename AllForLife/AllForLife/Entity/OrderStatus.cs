@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace AllForLife.Entity
 {
-    public static class CurrentUser
+    public class OrderStatus
     {
-        public static Users? CurrUser;
+        public int Id { get; set; }
+        public string Title { get; set; }
     }
 }

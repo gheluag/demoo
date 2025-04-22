@@ -9,8 +9,8 @@
     Width="500"
     Height="450"
     FontFamily="Comic Sans MS"
-    mc:Ignorable="d"
-    WindowStartupLocation="CenterScreen">
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
 
     <StackPanel
         Margin="10"
@@ -22,7 +22,7 @@
             HorizontalAlignment="Center"
             FontWeight="Bold"
             Text="Имя пользователя" />
-        
+
         <TextBox
             x:Name="usernameTB"
             Width="200"
@@ -45,8 +45,9 @@
             Width="100"
             Height="30"
             Margin="10"
+            Click="authBTN_Click"
             Content="Войти"
-            Style="{StaticResource btnStyle}" Click="authBTN_Click" />
+            Style="{StaticResource btnStyle}" />
 
     </StackPanel>
 </Window>
