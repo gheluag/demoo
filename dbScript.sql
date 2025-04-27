@@ -22,11 +22,9 @@ roleId int not null,
 foreign key (roleId) references roles (idRole)
 );
 
-select * from users
-
 insert into users
 values 
-(17, 'лягуш', 'лягушкинск', 'лягушка', 'legush', 'legush', 2);
+(1, 'лягуш', 'лягушкинск', 'лягушка', 'legush', 'legush', 2);
 
 create table supplier(
 idSupplier int primary key auto_increment,
@@ -42,6 +40,8 @@ create table category(
 idCategory int primary key auto_increment,
 nameCategory varchar(255) not null
 );
+
+
 
 create table product(
 idProduct int primary key auto_increment,

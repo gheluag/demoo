@@ -77,7 +77,7 @@ namespace AllForLife.windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AllForLife;V1.0.0.0;component/windows/authenticationwin.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AllForLife;component/windows/authenticationwin.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\windows\AuthenticationWin.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

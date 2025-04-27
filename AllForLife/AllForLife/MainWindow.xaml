@@ -71,11 +71,12 @@
 
                 <Button
                     x:Name="authBTN"
-                    Margin="10"
-                    Content="авторизация"
-                    FontSize="15" 
                     Width="100"
-                    Style="{StaticResource btnStyle}" Click="authBTN_Click"/>
+                    Margin="10"
+                    Click="authBTN_Click"
+                    Content="авторизация"
+                    FontSize="15"
+                    Style="{StaticResource btnStyle}" />
                 <Button
                     x:Name="regBTN"
                     Margin="10"
@@ -91,15 +92,42 @@
             FontSize="20"
             Text="Показано товаров: " />
 
-        <Button x:Name="ordersBtn" Content="заказы"
-                FontSize="14"
-                Style="{StaticResource btnStyle}"
-                Grid.Row="3"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Height="40"
-                Width="200"
-                Visibility="Collapsed"/>
+        <Button
+            x:Name="ordersBtn"
+            Grid.Row="3"
+            Width="200"
+            Height="40"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="заказы"
+            FontSize="14"
+            Style="{StaticResource btnStyle}"
+            Visibility="Collapsed" />
+
+        <StackPanel
+            Grid.Row="3"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal">
+
+            <Button
+                x:Name="newprodBtn"
+                Width="150"
+                Height="30"
+                Margin="10"
+                Content="добавить товар"
+                FontSize="15"
+                Style="{StaticResource btnStyle}" />
+
+            <Button
+                x:Name="edprodBtn"
+                Width="150"
+                Height="30"
+                Margin="10"
+                Content="редактировать товар"
+                FontSize="15"
+                Style="{StaticResource btnStyle}" Click="edprodBtn_Click" />
+
+        </StackPanel>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

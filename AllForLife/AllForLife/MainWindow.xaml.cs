@@ -1,4 +1,5 @@
 ﻿using AllForLife.Entity;
+using AllForLife.windows;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
@@ -213,4 +214,14 @@ public partial class MainWindow : Window
         
     }
 
+    private void edprodBtn_Click(object sender, RoutedEventArgs e)
+    {
+        var selectedProd = productsLB.SelectedItem as Products;
+        if (productsLB.SelectedItem is Products selectedProduct)
+        {
+            EditProduct_Window editWindow = new EditProduct_Window(selectedProduct);
+            editWindow.ShowDialog(); 
+        }
+        else return;
+    }
 }

@@ -5,6 +5,9 @@
     <Compile Update="windows\AuthenticationWin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="windows\EditProduct_Window.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="windows\AuthenticationWin.xaml">
