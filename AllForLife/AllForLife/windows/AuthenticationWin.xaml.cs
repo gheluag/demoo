@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,39 +22,63 @@ namespace AllForLife.windows
     public partial class AuthenticationWin : Window
     {
         DataBase _db;
+        public Users CurrentUser { get; set; }
         public AuthenticationWin()
         {
             InitializeComponent();
             _db = new();
         }
 
-        private void authBTN_Click(object sender, RoutedEventArgs e)
+
+        private void Login()
         {
             string username = usernameTB.Text.Trim();
             string password = passwordTB.Password.Trim();
 
-            var (isauth, role) = _db.AuthenticationUser(username, password);
+            CurrentUser = _db.AuthenticateUser(username, password);
 
-
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (CurrentUser != null)
             {
-                MessageBox.Show("Введите логин и пароль");
-                return;
+                DialogResult = true;
+                Close();
             }
-
-            if (!isauth)
-            {
-                MessageBox.Show("неверное имя пользователя или пароль", "ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
             else
             {
-                var user = _db.GetUserByUN(username);
-                var mainWin = new MainWindow();
-                mainWin.Show();
+                MessageBox.Show("Неверный логин или пароль", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void authBTN_Click(object sender, RoutedEventArgs e)
+        {
+            Login();
             
         }
+
+        private void Input_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Login();
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Down)
+            {
+                if (sender == usernameTB)
+                    passwordTB.Focus();
+                else if (sender == passwordTB)
+                    usernameTB.Focus(); 
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Up)
+            {
+                if (sender == passwordTB)
+                    usernameTB.Focus();
+                else if (sender == usernameTB)
+                    passwordTB.Focus();
+                e.Handled = true;
+            }
+        }
+
+
     }
 }

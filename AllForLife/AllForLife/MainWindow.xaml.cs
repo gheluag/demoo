@@ -1,4 +1,5 @@
 ﻿using AllForLife.Entity;
+using AllForLife.windows;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
@@ -20,11 +21,12 @@ public partial class MainWindow : Window
 {
     private DataBase _db;
     private ObservableCollection<Products> _productsCollection { get; set; }
+    private Users currentUser;
 
     static string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
     string defaultImage = System.IO.Path.Combine(imageFolder, "picture.png");
 
-    private Users _currentUser;
+   
     public MainWindow()
     {
         InitializeComponent();
@@ -163,6 +165,65 @@ public partial class MainWindow : Window
     private void authBTN_Click(object sender, RoutedEventArgs e)
     {
         windows.AuthenticationWin authenticationWin = new();
-        authenticationWin.ShowDialog();
+        if(authenticationWin.ShowDialog() == true)
+        {
+            currentUser = authenticationWin.CurrentUser;
+            UpdUI();
+        }
+    }
+
+
+    private void UpdUI()
+    {
+        userPanel.Visibility = Visibility.Visible;
+        usernameTB.Text = currentUser.Username;
+        nameTB.Text = currentUser.FullName;
+
+        authBTN.Content = "выйти";
+        authBTN.Click -= authBTN_Click;
+        authBTN.Click += LogoutButton_Click;
+        regBTN.Visibility = Visibility.Collapsed;
+
+
+        ordersBtn.Visibility = Visibility.Visible;
+
+        if (currentUser.Role == "Администратор")
+        {
+            adminPanel.Visibility = Visibility.Visible;
+        }
+
+    }
+
+    
+
+
+    private void LogoutButton_Click(object sender, RoutedEventArgs e)
+    {
+        currentUser = null;
+
+        userPanel.Visibility = Visibility.Collapsed;
+
+        authBTN.Content = "авторизация";
+        authBTN.Click -= LogoutButton_Click;
+        authBTN.Click += authBTN_Click;
+        regBTN.Visibility = Visibility.Visible;
+
+        
+    }
+
+    private void edprodBtn_Click(object sender, RoutedEventArgs e)
+    {
+        var selectedProd = productsLB.SelectedItem as Products;
+        if (productsLB.SelectedItem is Products selectedProduct)
+        {
+            EditProduct_Window editWindow = new EditProduct_Window(selectedProduct);
+            
+            if(editWindow.ShowDialog() == true)
+            {
+                
+            }
+
+        }
+        else return;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,7 @@ namespace AllForLife.Entity
 
             List<Products> productsList = new List<Products>();
 
-            string query = "select idProduct, productName, article, price, " +
-                "maxSale, currentSale, count, prodDesc, imageURL, nameCategory, " +
+            string query = "select product.*, nameCategory, " +
                 "nameBrand, nameSupplier " +
                 "from product " +
                 "join category on categoryId = idCategory " +
@@ -49,6 +49,10 @@ namespace AllForLife.Entity
                     products.Category = reader["nameCategory"].ToString();
                     products.Supplier = reader["nameSupplier"].ToString();
                     products.Brand = reader["nameBrand"].ToString();
+                    products.CategoryId = Convert.ToInt32(reader["categoryId"]);
+                    products.BrandId = Convert.ToInt32(reader["brandId"]);
+                    products.SupplierId = Convert.ToInt32(reader["supplierId"]);
+                    products.Count = Convert.ToInt32(reader["count"]);
 
                     productsList.Add(products);
                 }
@@ -73,8 +77,7 @@ namespace AllForLife.Entity
 
             List<Products> productsList = new List<Products>();
 
-            string query = "select idProduct, productName, article, price, " +
-                "maxSale, currentSale, count, prodDesc, imageURL, nameCategory, " +
+            string query = "select select product.*, nameCategory, " +
                 "nameBrand, nameSupplier " +
                 "from product " +
                 "join category on categoryId = idCategory " +
@@ -107,6 +110,10 @@ namespace AllForLife.Entity
                     products.Category = reader["nameCategory"].ToString();
                     products.Supplier = reader["nameSupplier"].ToString();
                     products.Brand = reader["nameBrand"].ToString();
+                    products.CategoryId = Convert.ToInt32(reader["categoryId"]);
+                    products.BrandId = Convert.ToInt32(reader["brandId"]);
+                    products.SupplierId = Convert.ToInt32(reader["supplierId"]);
+                    products.Count = Convert.ToInt32(reader["count"]);
 
                     productsList.Add(products);
                 }
@@ -131,8 +138,7 @@ namespace AllForLife.Entity
         {
             List<Products> productslst = new();
 
-            string query = "select idProduct, productName, article, price, " +
-                "maxSale, currentSale, count, prodDesc, imageURL, nameCategory, " +
+            string query = "select select product.*, nameCategory, " +
                 "nameBrand, nameSupplier " +
                 "from product " +
                 "join category on categoryId = idCategory " +
@@ -166,6 +172,10 @@ namespace AllForLife.Entity
                     products.Category = reader["nameCategory"].ToString();
                     products.Supplier = reader["nameSupplier"].ToString();
                     products.Brand = reader["nameBrand"].ToString();
+                    products.CategoryId = Convert.ToInt32(reader["categoryId"]);
+                    products.BrandId = Convert.ToInt32(reader["brandId"]);
+                    products.SupplierId = Convert.ToInt32(reader["supplierId"]);
+                    products.Count = Convert.ToInt32(reader["count"]);
 
                     productslst.Add(products);
                 }
@@ -188,33 +198,39 @@ namespace AllForLife.Entity
 
         }
 
-        public (bool isAuth, string Role) AuthenticationUser(string username, string password)
-        {
-          
 
-            string query = "select u.*, r.roleName " +
+        public Users AuthenticateUser(string uName, string passw)
+        {
+            Users users = null;
+
+            string query = "select u.*, roleName " +
                 "from users u " +
-                "join roles r on u.roleId = r.idRole " +
-                "where username = @un";
+                "join roles on u.roleId = idRole " +
+                "where username = @uname and passw = @passw";
 
             try
             {
                 connection.Open();
 
-                MySqlCommand command = new(query, connection);
-                command.Parameters.AddWithValue("@un", username);
+                MySqlCommand cmd = new(query, connection);
 
-                MySqlDataReader reader = command.ExecuteReader();
+                cmd.Parameters.AddWithValue("@uname", uName);
+                cmd.Parameters.AddWithValue("@passw", passw);
 
-                if (reader.Read())
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    string dbpassw = reader["passw"].ToString();
-                    string role = reader["roleName"].ToString();
-
-                    if(password == dbpassw)
+                    users = new Users
                     {
-                        return (true, role);
-                    }
+                        Id = Convert.ToInt32(reader["idUser"]),
+                        FirstName = reader["firstname"].ToString(),
+                        LastName = reader["lastname"].ToString(),
+                        MiddleName = reader["patronymic"].ToString(),
+                        Username = reader["username"].ToString(),
+                        Password = reader["passw"].ToString(),
+                        Role = reader["roleName"].ToString()
+                    };
                 }
 
 
@@ -228,39 +244,39 @@ namespace AllForLife.Entity
                 connection.Close();
             }
 
-            return (false, null);
+            return users;
         }
 
 
-        public Users GetUserByUN(string username)
+
+        public List<Categories> GetCategories()
         {
-            string query = "SELECT u.*, r.roleName FROM users u " +
-                   "JOIN roles r ON u.roleId = r.idRole " +
-                   "WHERE username = @un";
+            List<Categories> catlst = new();
+
+            string query = "select * from category";
+
 
             try
             {
                 connection.Open();
 
-                MySqlCommand command = new(query, connection);
-                command.Parameters.AddWithValue("@un", username);
+                MySqlCommand command = new MySqlCommand(query, connection);
 
-                using (MySqlDataReader reader = command.ExecuteReader())
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    if (reader.Read())
-                    {
-                        return new Users
-                        {
-                            Id = Convert.ToInt32(reader["id"]),
-                            Username = reader["username"].ToString(),
-                            FirstName = reader["firstName"].ToString(),
-                            LastName = reader["lastName"].ToString(),
-                            MiddleName = reader["middleName"]?.ToString(),
-                            Password = reader["passw"].ToString(),
-                            Role = reader["roleName"].ToString()
-                        };
-                    }
+
+                    Categories cat = new();
+                    cat.Id = Convert.ToInt32(reader["idCategory"]);
+                    cat.Name = reader["nameCategory"].ToString();
+
+                    catlst.Add(cat);
+                   
                 }
+
+                reader.Close();
+
             }
             catch (Exception ex)
             {
@@ -271,7 +287,141 @@ namespace AllForLife.Entity
                 connection.Close();
             }
 
-            return null;
+
+            return catlst;
+        }
+
+
+        public List<Suppliers> GetSuppliers()
+        {
+            List<Suppliers> suplst = new();
+
+            string query = "select * from supplier";
+
+
+            try
+            {
+                connection.Open();
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    Suppliers sup = new();
+                    sup.Id = Convert.ToInt32(reader["idSupplier"]);
+                    sup.Name = reader["nameSupplier"].ToString();
+
+                    suplst.Add(sup);
+
+                }
+
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return suplst;
+        }
+
+
+
+        public List<Brand> GetBrands()
+        {
+            List<Brand> brandlst = new();
+
+            string query = "select * from brand";
+
+
+            try
+            {
+                connection.Open();
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    Brand brand = new();
+                    brand.Id = Convert.ToInt32(reader["idBrand"]);
+                    brand.Name = reader["nameBrand"].ToString();
+
+                    brandlst.Add(brand);
+
+                }
+
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return brandlst;
+        }
+
+
+        public bool UpdateProduct(Products product)
+        {
+            string query = @"UPDATE product SET 
+                        productName = @name,
+                        article = @article,
+                        price = @price,
+                        currentSale = @currentSale,
+                        maxSale = @maxSale,
+                        prodDesc = @desc,
+                        imageURL = @img,
+                        categoryId = @catId,
+                        supplierId = @supId,
+                        brandId = @brandId
+                     WHERE idProduct = @id";
+
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@name", product.Name);
+                cmd.Parameters.AddWithValue("@article", product.Article);
+                cmd.Parameters.AddWithValue("@price", product.Price);
+                cmd.Parameters.AddWithValue("@currentSale", product.CurrentSale);
+                cmd.Parameters.AddWithValue("@maxSale", product.MaxSale);
+                cmd.Parameters.AddWithValue("@desc", product.Description);
+                cmd.Parameters.AddWithValue("@img", product.ImageURL ?? ""); 
+                cmd.Parameters.AddWithValue("@catId", product.CategoryId);
+                cmd.Parameters.AddWithValue("@supId", product.SupplierId);
+                cmd.Parameters.AddWithValue("@brandId", product.BrandId);
+                cmd.Parameters.AddWithValue("@id", product.Id);
+
+                int result = cmd.ExecuteNonQuery();
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
 

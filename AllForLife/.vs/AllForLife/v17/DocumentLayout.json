@@ -3,44 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\entity\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\entity\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\windows\\editproduct_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\windows\\editproduct_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\windows\\authenticationwin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\windows\\authenticationwin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\windows\\editproduct_window.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\windows\\editproduct_window.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\windows\\authenticationwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\windows\\authenticationwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\entity\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\entity\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\entity\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\entity\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\entity\\currentuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\entity\\currentuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\entity\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\entity\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\stylesdictionary.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\stylesdictionary.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\entity\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\entity\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|c:\\users\\chibisovaae\\desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\allforlife\\allforlife\\entity\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF10C535-841C-4725-98F3-4FC2706AD4C7}|AllForLife\\AllForLife.csproj|solutionrelative:allforlife\\entity\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\Entity\\CurrentUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AllForLife\\Entity\\CurrentUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,62 +50,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AuthenticationWin.xaml",
-              "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\windows\\AuthenticationWin.xaml",
-              "RelativeDocumentMoniker": "AllForLife\\windows\\AuthenticationWin.xaml",
-              "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\windows\\AuthenticationWin.xaml",
-              "RelativeToolTip": "AllForLife\\windows\\AuthenticationWin.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-21T06:47:57.671Z"
+              "DocumentIndex": 3,
+              "Title": "EditProduct_Window.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\windows\\EditProduct_Window.xaml.cs",
+              "RelativeDocumentMoniker": "AllForLife\\windows\\EditProduct_Window.xaml.cs",
+              "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\windows\\EditProduct_Window.xaml.cs",
+              "RelativeToolTip": "AllForLife\\windows\\EditProduct_Window.xaml.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAUwH0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T07:45:51.429Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "StylesDictionary.xaml",
               "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\StylesDictionary.xaml",
               "RelativeDocumentMoniker": "AllForLife\\StylesDictionary.xaml",
               "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\StylesDictionary.xaml",
               "RelativeToolTip": "AllForLife\\StylesDictionary.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-01T07:01:20.175Z"
+              "WhenOpened": "2025-04-29T07:42:31.177Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "DataBase.cs",
               "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\Entity\\DataBase.cs",
               "RelativeDocumentMoniker": "AllForLife\\Entity\\DataBase.cs",
               "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\Entity\\DataBase.cs",
               "RelativeToolTip": "AllForLife\\Entity\\DataBase.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEBAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAGABAAAAAAAAAAAcwKIBAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T20:27:43.45Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Categories.cs",
-              "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\Entity\\Categories.cs",
-              "RelativeDocumentMoniker": "AllForLife\\Entity\\Categories.cs",
-              "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\Entity\\Categories.cs",
-              "RelativeToolTip": "AllForLife\\Entity\\Categories.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T20:23:10.795Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Users.cs",
-              "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\Entity\\Users.cs",
-              "RelativeDocumentMoniker": "AllForLife\\Entity\\Users.cs",
-              "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\Entity\\Users.cs",
-              "RelativeToolTip": "AllForLife\\Entity\\Users.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T20:20:22.243Z"
             },
             {
               "$type": "Document",
@@ -123,26 +94,26 @@
               "RelativeDocumentMoniker": "AllForLife\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\MainWindow.xaml.cs",
               "RelativeToolTip": "AllForLife\\MainWindow.xaml.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAqwHgAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAALgAAAAAAAAAAAAwwOQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T18:22:08.394Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthenticationWin.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\windows\\AuthenticationWin.xaml.cs",
-              "RelativeDocumentMoniker": "AllForLife\\windows\\AuthenticationWin.xaml.cs",
-              "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\windows\\AuthenticationWin.xaml.cs",
-              "RelativeToolTip": "AllForLife\\windows\\AuthenticationWin.xaml.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAswDUAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T06:55:12.743Z"
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "AllForLife\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\MainWindow.xaml",
+              "RelativeToolTip": "AllForLife\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-31T18:22:14.951Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CurrentUser.cs",
               "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\Entity\\CurrentUser.cs",
               "RelativeDocumentMoniker": "AllForLife\\Entity\\CurrentUser.cs",
@@ -150,30 +121,32 @@
               "RelativeToolTip": "AllForLife\\Entity\\CurrentUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T07:07:36.543Z"
+              "WhenOpened": "2025-04-28T08:52:16.654Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "AllForLife\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\MainWindow.xaml",
-              "RelativeToolTip": "AllForLife\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-31T18:22:14.951Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "Products.cs",
               "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\Entity\\Products.cs",
               "RelativeDocumentMoniker": "AllForLife\\Entity\\Products.cs",
               "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\Entity\\Products.cs",
               "RelativeToolTip": "AllForLife\\Entity\\Products.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBEAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T07:00:55.554Z"
+              "WhenOpened": "2025-04-01T07:00:55.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditProduct_Window.xaml",
+              "DocumentMoniker": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\windows\\EditProduct_Window.xaml",
+              "RelativeDocumentMoniker": "AllForLife\\windows\\EditProduct_Window.xaml",
+              "ToolTip": "C:\\Users\\ChibisovaAE\\Desktop\\\u0433\u043E\u0432\u043D\u0430\\demo\\aeae\\demoo\\AllForLife\\AllForLife\\windows\\EditProduct_Window.xaml",
+              "RelativeToolTip": "AllForLife\\windows\\EditProduct_Window.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-29T09:11:52.319Z",
+              "EditorCaption": ""
             }
           ]
         }

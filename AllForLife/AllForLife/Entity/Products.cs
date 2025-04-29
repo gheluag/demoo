@@ -20,5 +20,10 @@ namespace AllForLife.Entity
         public string Category { get; set; }
         public string Supplier { get; set; }
         public string Brand { get; set; }
+
+
+        public int CategoryId { get; set; }
+        public int SupplierId { get; set; }
+        public int BrandId { get; set; }
     }
 }
