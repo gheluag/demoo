@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AllForLife")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9fa60dd8870ab1db46873b84f13914c51b962d3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abcd069557fc532f835aab28ff3301fabb9929ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("AllForLife")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AllForLife")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

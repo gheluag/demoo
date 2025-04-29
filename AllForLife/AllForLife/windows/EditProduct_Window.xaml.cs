@@ -95,12 +95,23 @@ namespace AllForLife.windows
                 currSaleTb.Background = Brushes.DarkRed;
                 return;
             }
-            if (!decimal.TryParse(priceTB.Text.Trim(), out decimal price))
+            string inputPrice = priceTB.Text.Trim().Replace('.', ',');
+
+            if (!decimal.TryParse(inputPrice, out decimal price))
             {
                 priceTB.Background = Brushes.DarkRed;
                 return;
             }
 
+            if (curSale > maxSale)
+            {
+                currSaleTb.Background = Brushes.DarkRed;
+                currSaleTb.ToolTip = "скидка не должна превышать максимальную";
+                return;
+            }
+
+
+            currSaleTb.ToolTip = Visibility.Collapsed;
             _prod.Name = nameTB.Text.Trim();
             _prod.Description = descTB.Text.Trim();
             _prod.Count = count;

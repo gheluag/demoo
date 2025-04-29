@@ -220,7 +220,8 @@ public partial class MainWindow : Window
             
             if(editWindow.ShowDialog() == true)
             {
-                
+                _productsCollection.Clear();
+                LoadProducts();
             }
 
         }

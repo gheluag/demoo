@@ -12,7 +12,7 @@ namespace AllForLife.Entity
 {
     public class DataBase
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;user=root;password=123456789;port=3306;database=AllForLife");
+        MySqlConnection connection = new MySqlConnection("server=localhost;user=root;password=1234;port=3306;database=AllForLife");
 
 
         public List<Products> GetProducts()
@@ -77,7 +77,7 @@ namespace AllForLife.Entity
 
             List<Products> productsList = new List<Products>();
 
-            string query = "select select product.*, nameCategory, " +
+            string query = "select product.*, nameCategory, " +
                 "nameBrand, nameSupplier " +
                 "from product " +
                 "join category on categoryId = idCategory " +
@@ -138,7 +138,7 @@ namespace AllForLife.Entity
         {
             List<Products> productslst = new();
 
-            string query = "select select product.*, nameCategory, " +
+            string query = "select product.*, nameCategory, " +
                 "nameBrand, nameSupplier " +
                 "from product " +
                 "join category on categoryId = idCategory " +
